@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "server.tomcat.url-encoding",
+      "type": "java.lang.String",
+      "description": "Description for server.tomcat.url-encoding."
+    },
+    {
+      "name": "management.servlet.context-path",
+      "type": "java.lang.String",
+      "description": "Description for management.servlet.context-path."
+    },
+    {
+      "name": "project.info.id",
+      "type": "java.lang.String",
+      "description": "Description for project.info.id."
+    }
+  ] }

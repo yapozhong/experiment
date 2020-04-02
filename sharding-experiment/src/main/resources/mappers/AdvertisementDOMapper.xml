@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.dao.UserDao">
+    <resultMap id="BaseResultMap" type="User">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, name, status
+    </sql>
+
+    <select id="findById" resultMap="BaseResultMap" parameterType="Long">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where id = #{id, jdbcType=BIGINT}
+    </select>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        order by id
+    </select>
+
+    <insert id="insert" parameterType="User">
+        insert into user(<include refid="Base_Column_List"/>)
+        values (#{id, jdbcType=BIGINT}, #{name, jdbcType=VARCHAR}, #{status, jdbcType=VARCHAR})
+    </insert>
+
+    <delete id="deleteAll">
+        delete from user
+    </delete>
+</mapper>

@@ -1,0 +1,6 @@
+project:
+  info:
+    id: "project-id"
+    name: "project-name"
+  list: ["d1", "d2"]
+  map: {id: "project-id", name: "project-name"}

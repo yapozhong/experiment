@@ -1,0 +1,14 @@
+server:
+  port: 9990
+
+management:
+  # 开放的端口以及路径
+  server:
+    port: 9991
+    servlet:
+      context-path: /
+  # 开放的监控功能
+  endpoints:
+    web:
+      exposure:
+        include: '*'
