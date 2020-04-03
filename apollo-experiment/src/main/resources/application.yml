@@ -1,0 +1,14 @@
+
+app:
+  id: apollo-experiment
+
+apollo:
+  meta: http://127.0.0.1:8080 # Apollo Meta Server 地址
+  bootstrap:
+    enabled: true # 保证 @Value 和 @ConfigurationProperties 可以读取到来自 Apollo 的配置项。
+    eagerLoad:
+      enable: true # 保证 Spring Boot 应用的 Logger 能够使用来自 Apollo 的配置项。
+    namespaces: application # 使用的 Apollo 的命名空间，默认为 application。
+
+server:
+  port: 9993
